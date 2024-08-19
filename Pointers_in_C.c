@@ -4,9 +4,12 @@
 
 void update (int *x, int *y) {
 
+	int a = *x;
 	*x += *y;
-	*y -= *x;
+	*y -= a;
 	*y = fabs(*y);
+
+}
 
 int main () {
 	
@@ -14,6 +17,13 @@ int main () {
 
 	scanf("%d %d", &a, &b);
 
-	int *x, *y = &a, &b;
+	int *x = &a;
+	int *y = &b;
 
-	
+	update(x,y);
+
+	printf("%d\n%d", a,b);
+
+	return 0;
+
+}
